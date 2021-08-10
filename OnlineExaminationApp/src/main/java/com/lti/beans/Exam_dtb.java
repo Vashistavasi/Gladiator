@@ -4,9 +4,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 @Entity
-@NamedQuery(name = "fetch-all", query = "select e from Exam_Db as e")
+@NamedQuery(name = "fetch-all", query = "select e from Exam_dtb as e")
 public class Exam_dtb {
-	
 	
 		@Id
 		@GeneratedValue
