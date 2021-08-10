@@ -1,6 +1,8 @@
 package com.lti.beans;
 
 public class Student_Information {
-	int sid;
+	private int stu_id;
+
+	 private String name;
 
 }
