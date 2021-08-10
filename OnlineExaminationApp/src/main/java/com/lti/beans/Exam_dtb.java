@@ -62,6 +62,7 @@ public class Exam_dtb {
 		public int getDuration_level3() {
 			return duration_level3;
 			
+			
 		}
 		public void setDuration_level3(int duration_level3) {
 			this.duration_level3 = duration_level3;
