@@ -1,7 +1,10 @@
 package com.lti.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -22,6 +25,16 @@ public class Exam_dtbDaoImpl implements Exam_dtbDao {
 		em.persist(ex1);
 		String msg = "Exam record Added of id " + ex1.getExam_id();
 		return msg;
+	}
+
+	@Override
+	public List<Exam_dtb> getExamList() {
+		
+		String sql = "SELECT e from Exam_dtb e";
+		Query qry = em.createQuery(sql);
+		List<Exam_dtb> exmList = qry.getResultList();
+		System.out.println("Inside getexamList");
+		return exmList;
 	}
 
 }
