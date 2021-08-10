@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "Exam_dtb")
 public class Exam_dtb {
