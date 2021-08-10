@@ -7,10 +7,12 @@ import javax.persistence.NamedQuery;
 @NamedQuery(name = "fetch-all", query = "select e from Exam_dtb as e")
 public class Exam_dtb {
 	
+	
 		@Id
 		@GeneratedValue
 		private int exam_id;
-	    private String exam_name;
+	    
+		private String exam_name;
 	    private int passing_score_level1;
 	    private int passing_score_level2;
 	    private int passing_score_level3;
