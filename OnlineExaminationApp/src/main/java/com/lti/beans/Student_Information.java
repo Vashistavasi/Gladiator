@@ -16,7 +16,8 @@ public class Student_Information {
 
 	 private String name;
 	 @JoinColumn
-	 
+	 @OneToOne
+	 private LoginDetails login;
 	
 	 private int mobile_no;
 	 private String city;
@@ -26,6 +27,13 @@ public class Student_Information {
 	 private  int year_of_graduation;
 	 
 	 
+	 
+	 public LoginDetails getLogin() {
+			return login;
+		}
+		public void setLogindetails(LoginDetails login) {
+			this.login = login;
+		}
 	
 	public int getStu_id() {
 		return stu_id;
