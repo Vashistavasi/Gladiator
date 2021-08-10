@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.beans.Student_Information;
+import com.lti.exception.StudentServiceException;
 import com.lti.repository.StudentRepository;
 
 public class StudentServiceImpl {
@@ -15,7 +16,7 @@ public class StudentServiceImpl {
 	public Student_Information login(String email, String password) throws Exception{
 		try {
 			int id = studentrepo.findByEmailAndPassword(email, password);
-			Student_Info studentinfo= studentrepo.findById(id);
+			Student_Information studentinfo= studentrepo.findById(id);
 			return studentinfo;	
 		}
 		catch(Exception e) {
