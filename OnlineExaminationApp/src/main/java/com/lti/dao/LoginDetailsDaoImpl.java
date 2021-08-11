@@ -20,12 +20,14 @@ public class LoginDetailsDaoImpl implements LoginDetailsDao {
 	@Override
 	@Transactional
 	public boolean checkAdmin(String  email_id) {
-		
+		System.out.println(email_id+"inside dao");
 		LoginDetails a1 = em.find(LoginDetails.class, email_id);
+		System.out.println(a1);
 		boolean status = false;
 		if(a1.getEmail_id() .equalsIgnoreCase(email_id)) {
 			status = true;
 		}
+		
 	    return status;
 		
 	}

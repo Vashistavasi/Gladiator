@@ -14,6 +14,7 @@ public class LoginDetailServiceImpl implements LoginDetailsService {
 	
 	@Override
 	public boolean checkAdmin(String email_id) {
+		System.out.println(email_id+"this is service");
 		
 		return loginDao.checkAdmin(email_id);
 	}

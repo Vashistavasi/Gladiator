@@ -2,6 +2,8 @@ package com.lti.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +27,12 @@ public class LoginDetailsController {
 	return loginService.addAdminDryRun(a1);
 	}
 	
-	@PostMapping("/AdminCheck")
-     public String checkAdmin(@RequestBody String email_id)	{
+	@GetMapping("/AdminCheck/{email_id}")
+     public String checkAdmin(@PathVariable(value="email_id") String email_id)	{
+		System.out.println(email_id+"this is controller");
 		boolean status = loginService.checkAdmin(email_id);
 		String msg = "Admin exist status " +status; 
+		
 		return msg;
 	}
 }
