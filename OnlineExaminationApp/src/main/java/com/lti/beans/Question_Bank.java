@@ -1,5 +1,6 @@
 package com.lti.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,43 +8,49 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
-public class Questionbank {
+@Table(name="Que")
+public class Question_Bank {
     @Id
-    @GeneratedValue
+   
+    @Column(name = "q_Id")
 	private int ques_id;
-    @JoinColumn
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Exam_dtb exam_id;
+    @Column(name = "e_Id")
+    private int exam_id;
+    @Column(name = "q_question")
     private String question;
+    @Column(name = "q_opt1")
     private String option1;
+    @Column(name = "q_opt2")
     private String option2;
+    @Column(name = "q_opt3")
     private String option3;
+    @Column(name = "q_opt4")
     private String option4;
+    @Column(name = "q_c_answer")
     private String correct_answer;
+    @Column(name = "q_level")
     private int question_level;
+    @Column(name = "q_marks")
     private int marks;
+    @Column(name = "q_group")
     private String group_name;
-	private int active;
+   
 
 
-    public int getActive() {
-		return active;
-	}
-	public void setActive(int active) {
-		this.active = active;
-	}
+  
 	public int getQues_id() {
 		return ques_id;
 	}
 	public void setQues_id(int ques_id) {
 		this.ques_id = ques_id;
 	}
-	public Exam_dtb getExam_id() {
+	public int getExam_id() {
 		return exam_id;
 	}
-	public void setExam_id(Exam_dtb exam_id) {
+	public void setExam_id(int exam_id) {
 		this.exam_id = exam_id;
 	}
 	public String getQuestion() {
