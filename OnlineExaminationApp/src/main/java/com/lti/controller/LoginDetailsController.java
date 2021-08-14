@@ -28,11 +28,11 @@ public class LoginDetailsController {
 	}
 	
 	@GetMapping("/AdminCheck/{email_id}")
-     public String checkAdmin(@PathVariable(value="email_id") String email_id)	{
+     public boolean checkAdmin(@PathVariable(value="email_id") String email_id)	{
 		System.out.println(email_id+"this is controller");
 		boolean status = loginService.checkAdmin(email_id);
 		String msg = "Admin exist status " +status; 
 		
-		return msg;
+		return status;
 	}
 }

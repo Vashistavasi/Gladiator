@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.dto.AdminViewQuestionDto;
 import com.lti.dto.FileUploadDto;
+import com.lti.dto.QuestionDto;
+import com.lti.dto.ResponseDto;
 import com.lti.beans.Exam_dtb;
 import com.lti.beans.Question_Bank;
 
@@ -36,10 +38,24 @@ public class AdminController {
 	public String addNewExam(@RequestBody Question_Bank q) {
 		return adminService.addQuestion(q);
 	}
-	
+
+	@RequestMapping(path = "/beginexam", method=RequestMethod.GET)
+	public List<QuestionDto> beginexam()
+	{
+		return adminService.getquestions(); 
+	}
 
 	@GetMapping("/QuestionsList")
 	public List<Question_Bank> getQuestionList(){
 		return adminService.getQuestionsList();
+	}
+	@RequestMapping(path="/saveresponse",method=RequestMethod.POST)
+	public int saveresponse(@RequestBody ResponseDto r)
+	{
+		System.out.println("Above");
+		System.out.println(r);
+		System.out.println("this");
+		return 0;
+		
 	}
 }

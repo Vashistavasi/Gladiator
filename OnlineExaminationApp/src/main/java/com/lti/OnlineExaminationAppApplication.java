@@ -9,8 +9,6 @@ public class OnlineExaminationAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineExaminationAppApplication.class, args);
 		
-	
-		
 	}
 
 }
