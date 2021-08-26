@@ -3,6 +3,9 @@ package com.lti;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.lti.services.AdminService;
+import com.lti.services.AdminServiceImpl;
+
 @SpringBootApplication
 public class OnlineExaminationAppApplication {
 
@@ -10,5 +13,6 @@ public class OnlineExaminationAppApplication {
 		SpringApplication.run(OnlineExaminationAppApplication.class, args);
 		
 	}
+	
 
 }

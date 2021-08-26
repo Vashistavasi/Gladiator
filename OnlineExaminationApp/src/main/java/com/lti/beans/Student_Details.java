@@ -10,12 +10,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Student_Details{
 	@Id
+	@SequenceGenerator(name = "mySeqGen", sequenceName = "myseq",
+    initialValue = 5011, allocationSize = 1)
+@GeneratedValue(generator = "mySeqGen")
 	 private int stu_id;
-
+	
 	 private String name;
 	 
 	 @OneToOne(cascade = CascadeType.ALL)
@@ -27,7 +31,7 @@ public class Student_Details{
 	 
 	 
 	 private String password;
-	 private int mobile_no;
+	 private long mobile_no;
 	 private String city;
 	 private String state;
 	 private Date  dob;
@@ -42,7 +46,7 @@ public class Student_Details{
 	
 	
 
-	public Student_Details(int stu_id, String name, LoginDetails login, String password, int mobile_no, String city,
+	public Student_Details(int stu_id, String name, LoginDetails login, String password, long mobile_no, String city,
 			String state, Date dob, String qualification, int year_of_graduation) {
 		super();
 		this.stu_id = stu_id;
@@ -96,10 +100,10 @@ public class Student_Details{
 		this.name = name;
 	}
 	
-	public int getMobile_no() {
+	public long getMobile_no() {
 		return mobile_no;
 	}
-	public void setMobile_no(int mobile_no) {
+	public void setMobile_no(long mobile_no) {
 		this.mobile_no = mobile_no;
 	}
 	public String getCity() {

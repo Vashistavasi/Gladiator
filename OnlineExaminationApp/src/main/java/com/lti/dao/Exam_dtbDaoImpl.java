@@ -30,7 +30,7 @@ public class Exam_dtbDaoImpl implements Exam_dtbDao {
 	@Override
 	public List<Exam_dtb> getExamList() {
 		
-		String sql = "SELECT e from Exam_dtb e";
+		String sql = "SELECT e from Exam_dtb e order by e.exam_id";
 		Query qry = em.createQuery(sql);
 		List<Exam_dtb> exmList = qry.getResultList();
 		System.out.println("Inside getexamList");

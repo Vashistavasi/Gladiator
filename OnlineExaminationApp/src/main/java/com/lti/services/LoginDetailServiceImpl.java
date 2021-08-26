@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.lti.beans.LoginDetails;
 import com.lti.dao.LoginDetailsDaoImpl;
+import com.lti.dto.Message;
 
 @Service
 public class LoginDetailServiceImpl implements LoginDetailsService {
@@ -23,6 +24,17 @@ public class LoginDetailServiceImpl implements LoginDetailsService {
 	public String addAdminDryRun(LoginDetails a1) {
 		
 		return loginDao.addAdminDryRun(a1);
+	}
+	@Override
+	public Message checkDetails(String email_id, String pwd) {
+		// TODO Auto-generated method stub
+		return loginDao.checkDetails(email_id, pwd);
+	}
+	
+
+	public Message checkDetailsAdmin(String email_id, String pwd) {
+		// TODO Auto-generated method stub
+		return loginDao.checkDetailsAdmin(email_id, pwd);
 	}
 
 }

@@ -44,6 +44,20 @@ public class AdminController {
 	{
 		return adminService.getquestions(); 
 	}
+	@RequestMapping(path = "/beginexam/{exam_id}", method=RequestMethod.GET)
+	public List<QuestionDto> beginexam(@PathVariable (value="exam_id")int exam_id)
+	{
+		return adminService.getquestions(exam_id); 
+	}
+	
+	@RequestMapping(path = "/beginexams/{exam_id}/{email_id}", method=RequestMethod.GET)
+	public List<QuestionDto> beginexam(@PathVariable (value="exam_id")int exam_id,@PathVariable (value="email_id")String email_id)
+	{
+		int stu_id=adminService.getId_Email(email_id);
+		return adminService.getquestions(exam_id,stu_id); 
+	}
+	
+	
 
 	@GetMapping("/QuestionsList")
 	public List<Question_Bank> getQuestionList(){
@@ -52,9 +66,13 @@ public class AdminController {
 	@RequestMapping(path="/saveresponse",method=RequestMethod.POST)
 	public int saveresponse(@RequestBody ResponseDto r)
 	{
+	
 		System.out.println("Above");
 		System.out.println(r);
 		System.out.println("this");
+		adminService.saveResponse(r);
+//	int s=adminService.validateResponse(r);
+//		System.out.println("The acheived score is "+ s);
 		return 0;
 		
 	}

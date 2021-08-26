@@ -15,8 +15,14 @@ public class LoginDetails {
 	
 	@Column(name = "password")
 	private String password;
-	//private String accesstype;
+	private String accesstype="student";
 
+	public String getAccesstype() {
+		return accesstype;
+	}
+	public void setAccesstype(String accesstype) {
+		this.accesstype = accesstype;
+	}
 	public LoginDetails(String email_id, String password) {
 		super();
 		this.email_id = email_id;

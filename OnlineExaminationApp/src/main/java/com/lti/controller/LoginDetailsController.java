@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.lti.beans.LoginDetails;
+import com.lti.dto.Message;
 import com.lti.services.LoginDetailServiceImpl;
 
 @CrossOrigin(origins ="*")
@@ -35,4 +36,21 @@ public class LoginDetailsController {
 		
 		return status;
 	}
+	@GetMapping("/CheckDetails/{email_id}/{pwd}")
+	  public Message checkDetails(@PathVariable(value="email_id") String email_id,@PathVariable(value="pwd")String pwd)	{
+			
+			
+					return loginService.checkDetails(email_id,pwd);
+			//String msg = "Admin exist status " +status; 
+			
+		}
+	@GetMapping("/CheckDetailsAdmin/{email_id}/{pwd}")
+	  public Message checkDetailsAdmin(@PathVariable(value="email_id") String email_id,@PathVariable(value="pwd")String pwd)	{
+			
+			
+					return loginService.checkDetailsAdmin(email_id,pwd);
+			//String msg = "Admin exist status " +status; 
+			
+		
+		}
 }
